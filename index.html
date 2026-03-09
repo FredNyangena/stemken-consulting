@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEMKEN CONSULTING | CPA Fred Nyangena Ogechi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo h1 span {
+            color: #ffd700;
+        }
+
+        .logo .tagline {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .partner-info {
+            text-align: right;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+        .partner-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: #ffd700;
+        }
+
+        .partner-info p {
+            font-size: 0.95rem;
+        }
+
+        /* Navigation */
+        nav {
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 15px 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #1e3c72;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #2a5298;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero h2 span {
+            color: #ffd700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ffd700;
+            color: #1e3c72;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #fff;
+            color: #1e3c72;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #1e3c72;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: #ffd700;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e9ecef;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #6c757d;
+            font-size: 0.95rem;
+        }
+
+        /* Tenant Management System - Featured */
+        .tms-feature {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 60px 0;
+            margin: 40px 0;
+        }
+
+        .tms-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .tms-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+
+        .tms-text ul {
+            list-style: none;
+        }
+
+        .tms-text ul li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .tms-text ul li:before {
+            content: "✓";
+            color: #ffd700;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .tms-image {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .tms-image h4 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            color: #1e3c72;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .about-highlight {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .about-highlight h4 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .about-highlight p {
+            margin-bottom: 10px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .contact-info h3 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .contact-detail {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-detail strong {
+            min-width: 80px;
+            color: #1e3c72;
+        }
+
+        .contact-detail a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+
+        .contact-detail a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin-right: 15px;
+            color: #1e3c72;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ffd700;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+        }
+
+        .contact-form button {
+            background: #1e3c72;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #2a5298;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #ffd700;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .partner-info {
+                text-align: center;
+                margin-top: 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .tms-content,
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>STEMKEN <span>CONSULTING</span></h1>
+                    <p class="tagline">Strategic Partners in Business Growth</p>
+                </div>
+                <div class="partner-info">
+                    <h3>CPA Fred Nyangena Ogechi</h3>
+                    <p>Managing Partner & Founder</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#tms">Tenant System</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>ELEVATE YOUR <span>VENTURE</span></h2>
+            <p>with Comprehensive Strategic Solutions from STEMKEN CONSULTING</p>
+            <a href="#contact" class="btn">Schedule Your Consultation</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive financial and business solutions tailored to your needs</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Row 1: Financial Services -->
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Taxation & Advisory</h3>
+                    <p>Expert tax planning, compliance, and advisory services to optimize your tax position and ensure regulatory compliance.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Financial Reporting</h3>
+                    <p>Accurate and timely financial statements, management reports, and analysis for informed decision-making.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📝</div>
+                    <h3>Bookkeeping Services</h3>
+                    <p>Meticulous record-keeping and financial organization to keep your business finances in perfect order.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>Payroll Management</h3>
+                    <p>End-to-end payroll processing, statutory deductions, and compliance with Kenyan labor laws.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Company Registration</h3>
+                    <p>Hassle-free business registration, licensing, and legal compliance services in Kenya.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>Investment Solutions</h3>
+                    <p>Strategic investment advisory and portfolio management to grow your wealth.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Business Consultancy</h3>
+                    <p>Strategic business planning, growth strategies, and operational optimization.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📐</div>
+                    <h3>Project Management</h3>
+                    <p>End-to-end project planning, execution, and monitoring for successful outcomes.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">✍️</div>
+                    <h3>Proposal Writing</h3>
+                    <p>Professional proposal development for tenders, grants, and business opportunities.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📜</div>
+                    <h3>Estate & Trust Planning</h3>
+                    <p>Comprehensive estate planning, trust management, and wealth preservation strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tms" class="tms-feature">
+        <div class="container">
+            <div class="tms-content">
+                <div class="tms-text">
+                    <h3>Tenant Management System</h3>
+                    <h4>OPTIMIZE YOUR PORTFOLIO with Our Integrated System</h4>
+                    <ul>
+                        <li>Tenant Portal for easy communication</li>
+                        <li>Automated Rent Tracking</li>
+                        <li>Maintenance Requests Management</li>
+                        <li>Digital Lease Agreements</li>
+                        <li>Automated Notifications & Reminders</li>
+                        <li>Comprehensive Financial Reports</li>
+                    </ul>
+                </div>
+                <div class="tms-image">
+                    <h4>🚀 Coming Soon</h4>
+                    <p>Revolutionize your property management with our cutting-edge digital solution.</p>
+                    <a href="#contact" style="color: #ffd700; text-decoration: none; font-weight: bold;">Request Early Access →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>About CPA Fred Nyangena Ogechi</h3>
+                    <p>With extensive experience in financial management, taxation, and business strategy, CPA Fred Nyangena Ogechi leads STEMKEN CONSULTING with a vision to empower businesses across Kenya and beyond.</p>
+                    <p>As a Certified Public Accountant and strategic business partner, Fred combines technical expertise with practical business acumen to deliver solutions that drive real growth.</p>
+                    <p>STEMKEN CONSULTING was founded on the principle that every business deserves access to professional financial guidance that is both affordable and transformative.</p>
+                </div>
+                <div class="about-highlight">
+                    <h4>Our Commitment</h4>
+                    <p>✅ Professional Excellence</p>
+                    <p>✅ Integrity & Transparency</p>
+                    <p>✅ Client-Centered Solutions</p>
+                    <p>✅ Timely Delivery</p>
+                    <p>✅ Continuous Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Schedule your consultation with CPA Fred Nyangena Ogechi today</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    
+                    <div class="contact-detail">
+                        <strong>Phone:</strong>
+                        <div>
+                            <a href="tel:+254755743607">+254 755 743 607</a><br>
+                            <a href="tel:+254705000448">+254 705 000 448</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <strong>Email:</strong>
+                        <div>
+                            <a href="mailto:nyangenafred@gmail.com">nyangenafred@gmail.com</a><br>
+                            <a href="mailto:info@stemkenconsulting.com">info@stemkenconsulting.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <strong>Office:</strong>
+                        <span>Mustard Seed Complex, Uthiru, Nairobi, Kenya</span>
+                    </div>
+
+                    <div class="contact-detail">
+                        <strong>Hours:</strong>
+                        <span>Mon-Fri: 8:00 AM - 6:00 PM<br>Sat: 9:00 AM - 1:00 PM</span>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/cpafrednyangena" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form name="contact" method="POST" data-netlify="true">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="tel" name="phone" placeholder="Your Phone Number">
+                        <select name="service" required>
+                            <option value="">Select Service</option>
+                            <option value="taxation">Taxation & Advisory</option>
+                            <option value="financial">Financial Reporting</option>
+                            <option value="bookkeeping">Bookkeeping</option>
+                            <option value="payroll">Payroll Management</option>
+                            <option value="registration">Company Registration</option>
+                            <option value="investment">Investment Solutions</option>
+                            <option value="consultancy">Business Consultancy</option>
+                            <option value="project">Project Management</option>
+                            <option value="proposal">Proposal Writing</option>
+                            <option value="estate">Estate & Trust Planning</option>
+                            <option value="tms">Tenant Management System</option>
+                        </select>
+                        <textarea name="message" placeholder="How can we help you?" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#tms">Tenant System</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p>&copy; 2026 STEMKEN CONSULTING. All rights reserved.</p>
+            <p>Strategic Partners in Business Growth</p>
+        </div>
+    </footer>
+</body>
+</html>
